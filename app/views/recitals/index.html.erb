@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recitals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recitals.each do |recital| %>
+      <tr>
+        <td><%= recital.name %></td>
+        <td><%= recital.date %></td>
+        <td><%= recital.location %></td>
+        <td><%= recital.note %></td>
+        <td><%= link_to 'Show', recital %></td>
+        <td><%= link_to 'Edit', edit_recital_path(recital) %></td>
+        <td><%= link_to 'Destroy', recital, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recital', new_recital_path %>

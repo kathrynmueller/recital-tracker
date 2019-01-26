@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recital.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @recital.date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @recital.location %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @recital.note %>
+</p>
+
+<%= link_to 'Edit', edit_recital_path(@recital) %> |
+<%= link_to 'Back', recitals_path %>
