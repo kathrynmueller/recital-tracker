@@ -11,6 +11,7 @@ class SemestersController < ApplicationController
   # GET /semesters/1.json
   def show
     @recital = Recital.new
+    @user = current_user
   end
 
   # GET /semesters/new

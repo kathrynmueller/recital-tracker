@@ -13,7 +13,8 @@
 <div id="recitals">
 	<% @semester.recitals.each do |recital| %>
 		<p><%= recital.name %>
-		<br><%= recital.date.strftime("%A, %b %d | %l:%M %p") %></p>
+		<br><%= recital.date.strftime("%A, %b %d | %l:%M %p") %>
+	</p>
 	<% end %>
 </div>
 
