@@ -31,6 +31,10 @@
     <%= form.text_field :note %>
   </div>
 
+  <div class="field">
+    <%= form.hidden_field :semester_id, value: @semester.id %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

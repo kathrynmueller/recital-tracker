@@ -10,5 +10,17 @@
   <%= @semester.status %>
 </p>
 
+<div id="recitals">
+	<% @semester.recitals.each do |recital| %>
+		<p><%= recital.name %></p>
+	<% end %>
+</div>
+
+<div id="new-recital">
+	<h2>Add a New Recital</h2>
+    <%= render 'recitals/form', recital: @recital %>
+
+</div>
+
 <%= link_to 'Edit', edit_semester_path(@semester) %> |
 <%= link_to 'Back', semesters_path %>

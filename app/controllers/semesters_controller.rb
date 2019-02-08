@@ -10,6 +10,7 @@ class SemestersController < ApplicationController
   # GET /semesters/1
   # GET /semesters/1.json
   def show
+    @recital = Recital.new
   end
 
   # GET /semesters/new

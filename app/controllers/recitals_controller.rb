@@ -28,7 +28,7 @@ class RecitalsController < ApplicationController
 
     respond_to do |format|
       if @recital.save
-        format.html { redirect_to @recital, notice: 'Recital was successfully created.' }
+        format.html { redirect_to semester_path(id: @recital.semester_id), notice: 'Recital was successfully created.' }
         format.json { render :show, status: :created, location: @recital }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class RecitalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recital_params
-      params.require(:recital).permit(:name, :date, :location, :note)
+      params.require(:recital).permit(:name, :date, :location, :note, :semester_id)
     end
 end
