@@ -11,16 +11,33 @@
 </p>
 
 <div id="recitals">
-	<% @semester.recitals.each do |recital| %>
-		<p><%= recital.name %>
-		<br><%= recital.date.strftime("%A, %b %d | %l:%M %p") %>
-	</p>
-	<% end %>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Recital</th>
+				<th>Date & Time</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @semester.recitals.each do |recital| %>
+				<tr>
+			
+				<td><%= recital.name %></td>
+				<td><%= recital.date.strftime("%A, %b %d | %l:%M %p") %></td>
+				<!-- How to make the below work? -->
+				<td style="color: blue">Checkboxes (attended/missed/excused) & SUBMIT button</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>
 
-<div id="new-recital">
-	<h2>Add a New Recital</h2>
-    <%= render 'recitals/form', recital: @recital %>
+<div class="card" id="new-recital">
+	<div class="card-body">
+		<h2>Add a New Recital</h2>
+	    <%= render 'recitals/form', recital: @recital %>
+	</div>
 
 </div>
 
